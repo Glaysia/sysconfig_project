@@ -9,11 +9,14 @@
 /**
  * These are the peripherals and settings in this configuration
  */
-const EPWM1   = scripting.addPeripheral("EPWM");
-EPWM1.$name   = "peetsEPWM1";
-EPWM1.$assign = "EPWM1";
-const EPWM2   = scripting.addPeripheral("EPWM");
-EPWM2.$name   = "MyEPWM1";
+const EPWM1             = scripting.addPeripheral("EPWM");
+EPWM1.$name             = "peetsEPWM1";
+EPWM1.$assign           = "EPWM1";
+const EPWM2             = scripting.addPeripheral("EPWM");
+EPWM2.$name             = "peetsEPWM2";
+EPWM2.$assign           = "EPWM2";
+EPWM2["EPWM#A"].$assign = "GPIO2";
+EPWM2["EPWM#B"].$assign = "GPIO3";
 
 /**
  * Pinmux solution for unlocked pins/peripherals. This ensures that minor changes to the automatic solver in a future
@@ -22,6 +25,3 @@ EPWM2.$name   = "MyEPWM1";
  */
 EPWM1["EPWM#A"].$suggestSolution = "GPIO0";
 EPWM1["EPWM#B"].$suggestSolution = "GPIO1";
-EPWM2.$suggestSolution           = "EPWM2";
-EPWM2["EPWM#A"].$suggestSolution = "GPIO147";
-EPWM2["EPWM#B"].$suggestSolution = "GPIO148";
