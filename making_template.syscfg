@@ -10,18 +10,52 @@
  * These are the peripherals and settings in this configuration
  */
 const EPWM1             = scripting.addPeripheral("EPWM");
-EPWM1.$name             = "peetsEPWM1";
+EPWM1.$name             = "EPWM1";
 EPWM1.$assign           = "EPWM1";
+EPWM1["EPWM#A"].$assign = "GPIO0";
+EPWM1["EPWM#B"].$assign = "GPIO1";
+
 const EPWM2             = scripting.addPeripheral("EPWM");
-EPWM2.$name             = "peetsEPWM2";
+EPWM2.$name             = "EPWM2";
 EPWM2.$assign           = "EPWM2";
 EPWM2["EPWM#A"].$assign = "GPIO2";
 EPWM2["EPWM#B"].$assign = "GPIO3";
 
-/**
- * Pinmux solution for unlocked pins/peripherals. This ensures that minor changes to the automatic solver in a future
- * version of the tool will not impact the pinmux you originally saw.  These lines can be completely deleted in order to
- * re-solve from scratch.
- */
-EPWM1["EPWM#A"].$suggestSolution = "GPIO0";
-EPWM1["EPWM#B"].$suggestSolution = "GPIO1";
+const EPWM3             = scripting.addPeripheral("EPWM");
+EPWM3.$name             = "EPWM3";
+EPWM3.$assign           = "EPWM3";
+EPWM3["EPWM#A"].$assign = "GPIO4";
+EPWM3["EPWM#B"].$assign = "GPIO5";
+
+const EPWM4             = scripting.addPeripheral("EPWM");
+EPWM4.$name             = "EPWM4";
+EPWM4.$assign           = "EPWM4";
+EPWM4["EPWM#A"].$assign = "GPIO6";
+EPWM4["EPWM#B"].$assign = "GPIO7";
+
+const EPWM5             = scripting.addPeripheral("EPWM");
+EPWM5.$name             = "EPWM5";
+EPWM5.$assign           = "EPWM5";
+EPWM5["EPWM#A"].$assign = "GPIO8";
+EPWM5["EPWM#B"].$assign = "GPIO9";
+
+const EPWM6             = scripting.addPeripheral("EPWM");
+EPWM6.$name             = "EPWM6";
+EPWM6.$assign           = "EPWM6";
+EPWM6["EPWM#A"].$assign = "GPIO10";
+EPWM6["EPWM#B"].$assign = "GPIO11";
+
+
+const EPWM7             = scripting.addPeripheral("EPWM");
+EPWM7.$name             = "EPWM7";
+EPWM7.$assign           = "EPWM7";
+EPWM7["EPWM#A"].$assign = "GPIO12";
+EPWM7["EPWM#B"].$assign = "GPIO13";
+
+
+
+const EPWM8             = scripting.addPeripheral("EPWM");
+EPWM8.$name             = "EPWM8";
+EPWM8.$assign           = "EPWM8";
+EPWM8["EPWM#A"].$assign = "GPIO14";
+EPWM8["EPWM#B"].$assign = "GPIO15";
