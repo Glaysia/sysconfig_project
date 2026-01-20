@@ -1,6 +1,6 @@
 //*****************************************************************************
 //
-//  f2838x_pinmux.h - Created using TI Pinmux 1.26.2+4477 on 1/20/2026 at 5:16:12 PM.
+//  f2838x_pinmux.h - Created using TI Pinmux 1.26.2+4477 on 1/21/2026 at 3:22:35 PM.
 //
 //*****************************************************************************
 //
@@ -61,6 +61,8 @@
 //
 // Port A mux register values
 //
+// Pin W11 (GPIO29) to ESC_SYNC0 (mode 14)
+// Pin T11 (GPIO30) to ESC_SYNC1 (mode 14)
 // Pin C8 (GPIO0) to EPWM1A (mode 1)
 // Pin D8 (GPIO1) to EPWM1B (mode 1)
 // Pin A7 (GPIO2) to EPWM2A (mode 1)
@@ -77,12 +79,20 @@
 // Pin D1 (GPIO13) to EPWM7B (mode 1)
 // Pin D2 (GPIO14) to EPWM8A (mode 1)
 // Pin D3 (GPIO15) to EPWM8B (mode 1)
+// Pin E1 (GPIO16) to EPWM9A (mode 5)
+// Pin E2 (GPIO17) to EPWM9B (mode 5)
+// Pin E3 (GPIO18) to EPWM10A (mode 5)
+// Pin E4 (GPIO19) to EPWM10B (mode 5)
+// Pin F2 (GPIO20) to EPWM11A (mode 5)
+// Pin F3 (GPIO21) to EPWM11B (mode 5)
+// Pin J4 (GPIO22) to EPWM12A (mode 5)
+// Pin K4 (GPIO23) to EPWM12B (mode 5)
 #define GPAMUX1_MASK		0xffffffff
-#define GPAMUX2_MASK		0x00000000
+#define GPAMUX2_MASK		0x3c00ffff
 #define GPAMUX1_VALUE		0x55555555
-#define GPAMUX2_VALUE		0x00000000
+#define GPAMUX2_VALUE		0x28005555
 #define GPAGMUX1_VALUE		0x00000000
-#define GPAGMUX2_VALUE		0x00000000
+#define GPAGMUX2_VALUE		0x3c005555
 
 //
 // Port B mux register values
@@ -107,29 +117,73 @@
 //
 // Port D mux register values
 //
-#define GPDMUX1_MASK		0x00000000
-#define GPDMUX2_MASK		0x00000000
+// Pin T9 (GPIO125) to ESC_LATCH0 (mode 14)
+// Pin U9 (GPIO126) to ESC_LATCH1 (mode 14)
+// Pin L3 (GPIO107) to GPIO107 (mode 0)
+// Pin U15 (GPIO120) to GPIO120 (mode 0)
+// Pin W16 (GPIO121) to GPIO121 (mode 0)
+#define GPDMUX1_MASK		0x00c00000
+#define GPDMUX2_MASK		0x3c0f0000
 #define GPDMUX1_VALUE		0x00000000
-#define GPDMUX2_VALUE		0x00000000
+#define GPDMUX2_VALUE		0x28000000
 #define GPDGMUX1_VALUE		0x00000000
-#define GPDGMUX2_VALUE		0x00000000
+#define GPDGMUX2_VALUE		0x3c000000
 
 //
 // Port E mux register values
 //
-#define GPEMUX1_MASK		0x00000000
-#define GPEMUX2_MASK		0x00000000
-#define GPEMUX1_VALUE		0x00000000
-#define GPEMUX2_VALUE		0x00000000
-#define GPEGMUX1_VALUE		0x00000000
-#define GPEGMUX2_VALUE		0x00000000
+// Pin F18 (GPIO143) to ESC_LED_LINK0_ACTIVE (mode 14)
+// Pin F17 (GPIO144) to ESC_LED_LINK1_ACTIVE (mode 14)
+// Pin D18 (GPIO146) to ESC_LED_RUN (mode 14)
+// Pin E17 (GPIO145) to ESC_LED_ERR (mode 14)
+// Pin D17 (GPIO147) to ESC_LED_STATE_RUN (mode 14)
+// Pin B13 (GPIO150) to ESC_I2C_SDA (mode 14)
+// Pin C13 (GPIO151) to ESC_I2C_SCL (mode 14)
+// Pin U18 (GPIO135) to ESC_TX1_DATA3 (mode 14)
+// Pin V18 (GPIO134) to ESC_TX1_DATA2 (mode 14)
+// Pin W18 (GPIO132) to ESC_TX1_DATA1 (mode 14)
+// Pin V10 (GPIO131) to ESC_TX1_DATA0 (mode 14)
+// Pin D13 (GPIO152) to ESC_MDIO_CLK (mode 14)
+// Pin A12 (GPIO153) to ESC_MDIO_DATA (mode 14)
+// Pin T10 (GPIO129) to ESC_TX1_ENA (mode 14)
+// Pin T18 (GPIO137) to ESC_RX1_CLK (mode 14)
+// Pin T17 (GPIO136) to ESC_RX1_DV (mode 14)
+// Pin T19 (GPIO138) to ESC_RX1_ERR (mode 14)
+// Pin N19 (GPIO139) to ESC_RX1_DATA0 (mode 14)
+// Pin M19 (GPIO140) to ESC_RX1_DATA1 (mode 14)
+// Pin M18 (GPIO141) to ESC_RX1_DATA2 (mode 14)
+// Pin L19 (GPIO142) to ESC_RX1_DATA3 (mode 14)
+// Pin C12 (GPIO155) to ESC_PHY_RESETn (mode 14)
+// Pin B10 (GPIO157) to ESC_TX0_CLK (mode 14)
+// Pin C10 (GPIO158) to ESC_TX0_DATA0 (mode 14)
+// Pin D10 (GPIO159) to ESC_TX0_DATA1 (mode 14)
+// Pin D12 (GPIO156) to ESC_TX0_ENA (mode 14)
+// Pin U10 (GPIO130) to ESC_TX1_CLK (mode 14)
+// Pin D14 (GPIO148) to ESC_PHY0_LINKSTATUS (mode 14)
+// Pin A13 (GPIO149) to ESC_PHY1_LINKSTATUS (mode 14)
+// Pin B12 (GPIO154) to GPIO154 (mode 0)
+#define GPEMUX1_MASK		0xfffff3fc
+#define GPEMUX2_MASK		0xffffffff
+#define GPEMUX1_VALUE		0xaaaaa2a8
+#define GPEMUX2_VALUE		0xaa8aaaaa
+#define GPEGMUX1_VALUE		0xfffff3fc
+#define GPEGMUX2_VALUE		0xffcfffff
 
 //
 // Port F mux register values
 //
-#define GPFMUX1_MASK		0x00000000
-#define GPFMUX1_VALUE		0x00000000
-#define GPFGMUX1_VALUE		0x00000000
+// Pin A8 (GPIO163) to ESC_RX0_CLK (mode 14)
+// Pin D9 (GPIO162) to ESC_RX0_DV (mode 14)
+// Pin B8 (GPIO164) to ESC_RX0_ERR (mode 14)
+// Pin C5 (GPIO165) to ESC_RX0_DATA0 (mode 14)
+// Pin D5 (GPIO166) to ESC_RX0_DATA1 (mode 14)
+// Pin C4 (GPIO167) to ESC_RX0_DATA2 (mode 14)
+// Pin D4 (GPIO168) to ESC_RX0_DATA3 (mode 14)
+// Pin B9 (GPIO160) to ESC_TX0_DATA2 (mode 14)
+// Pin C9 (GPIO161) to ESC_TX0_DATA3 (mode 14)
+#define GPFMUX1_MASK		0x0003ffff
+#define GPFMUX1_VALUE		0x0002aaaa
+#define GPFGMUX1_VALUE		0x0003ffff
 
 //
 // Port B analog mode register values
