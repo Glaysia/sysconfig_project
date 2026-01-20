@@ -1,0 +1,27 @@
+/**
+ * These arguments were used when this file was generated. They will be automatically applied on subsequent loads
+ * via the GUI or CLI. Run CLI with '--help' for additional information on how to override these arguments.
+ * @cliArgs --device "F2838x" --part "F2838x_337bga" --package "337bga"
+ * @v2CliArgs --device "TMS320F28388D" --package "337bga"
+ * @versions {"tool":"1.26.2+4477"}
+ */
+
+/**
+ * These are the peripherals and settings in this configuration
+ */
+const EPWM1   = scripting.addPeripheral("EPWM");
+EPWM1.$name   = "peetsEPWM1";
+EPWM1.$assign = "EPWM1";
+const EPWM2   = scripting.addPeripheral("EPWM");
+EPWM2.$name   = "MyEPWM1";
+
+/**
+ * Pinmux solution for unlocked pins/peripherals. This ensures that minor changes to the automatic solver in a future
+ * version of the tool will not impact the pinmux you originally saw.  These lines can be completely deleted in order to
+ * re-solve from scratch.
+ */
+EPWM1["EPWM#A"].$suggestSolution = "GPIO0";
+EPWM1["EPWM#B"].$suggestSolution = "GPIO1";
+EPWM2.$suggestSolution           = "EPWM2";
+EPWM2["EPWM#A"].$suggestSolution = "GPIO147";
+EPWM2["EPWM#B"].$suggestSolution = "GPIO148";
