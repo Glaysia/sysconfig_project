@@ -5,6 +5,8 @@
  * @v2CliArgs --device "TMS320F28388D" --package "337bga"
  * @versions {"tool":"1.26.2+4477"}
  */
+scripting.excludeFromBuild("f2838x_pinmux.c");
+scripting.excludeFromBuild("f2838x_pinmux.h");
 
 /**
  * These are the peripherals and settings in this configuration
