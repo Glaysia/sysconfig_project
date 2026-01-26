@@ -1,6 +1,6 @@
 //*****************************************************************************
 //
-//  pinmux.h - Created using TI Pinmux 1.26.2+4477 on 1/21/2026 at 4:02:22 PM.
+//  pinmux.h - Created using TI Pinmux 1.26.2+4477 on 1/26/2026 at 10:25:55 PM.
 //
 //*****************************************************************************
 //
@@ -61,7 +61,6 @@
 //
 // Port A mux register values
 //
-// Pin W11 (GPIO29) to ESC_SYNC0 (mode 14)
 // Pin T11 (GPIO30) to ESC_SYNC1 (mode 14)
 // Pin C8 (GPIO0) to EPWM1A (mode 1)
 // Pin D8 (GPIO1) to EPWM1B (mode 1)
@@ -87,22 +86,38 @@
 // Pin F3 (GPIO21) to EPWM11B (mode 5)
 // Pin J4 (GPIO22) to EPWM12A (mode 5)
 // Pin K4 (GPIO23) to EPWM12B (mode 5)
+// Pin V11 (GPIO28) to SCIA_RX (mode 1)
+// Pin W11 (GPIO29) to SCIA_TX (mode 1)
+// Pin K3 (GPIO24) to SPIB_SIMO (mode 6)
+// Pin K1 (GPIO26) to SPIB_CLK (mode 6)
+// Pin L1 (GPIO27) to SPIB_STEn (mode 6)
 #define GPAMUX1_MASK		0xffffffff
-#define GPAMUX2_MASK		0x3c00ffff
+#define GPAMUX2_MASK		0x3ff3ffff
 #define GPAMUX1_VALUE		0x55555555
-#define GPAMUX2_VALUE		0x28005555
+#define GPAMUX2_VALUE		0x25a25555
 #define GPAGMUX1_VALUE		0x00000000
-#define GPAGMUX2_VALUE		0x3c005555
+#define GPAGMUX2_VALUE		0x30515555
 
 //
 // Port B mux register values
 //
-#define GPBMUX1_MASK		0x00000000
-#define GPBMUX2_MASK		0x00000000
-#define GPBMUX1_VALUE		0x00000000
-#define GPBMUX2_VALUE		0x00000000
-#define GPBGMUX1_VALUE		0x00000000
-#define GPBGMUX2_VALUE		0x00000000
+// Pin U14 (GPIO34) to ESC_SYNC0 (mode 14)
+// Pin K18 (GPIO44) to ENET_MII_TX_CLK (mode 11)
+// Pin M16 (GPIO59) to ENET_MII_TX_DATA0 (mode 11)
+// Pin U17 (GPIO41) to ENET_REVMII_MDIO_RST (mode 10)
+// Pin E18 (GPIO47) to ENET_PPS0 (mode 11)
+// Pin R16 (GPIO48) to ENET_PPS1 (mode 11)
+// Pin W17 (GPIO39) to SCIC_RX (mode 5)
+// Pin T16 (GPIO38) to SCIC_TX (mode 5)
+// Pin L16 (GPIO61) to SPIB_SOMI (mode 6)
+// Pin D19 (GPIO42) to UARTA_TX (mode 11)
+// Pin C19 (GPIO43) to UARTA_RX (mode 11)
+#define GPBMUX1_MASK		0xc3fcf030
+#define GPBMUX2_MASK		0x0cc00003
+#define GPBMUX1_VALUE		0xc3f85020
+#define GPBMUX2_VALUE		0x08c00003
+#define GPBGMUX1_VALUE		0x82a85030
+#define GPBGMUX2_VALUE		0x04800002
 
 //
 // Port C mux register values
@@ -119,15 +134,32 @@
 //
 // Pin T9 (GPIO125) to ESC_LATCH0 (mode 14)
 // Pin U9 (GPIO126) to ESC_LATCH1 (mode 14)
+// Pin N2 (GPIO109) to ENET_MII_CRS (mode 14)
+// Pin M2 (GPIO110) to ENET_MII_COL (mode 14)
+// Pin M4 (GPIO111) to ENET_MII_RX_CLK (mode 14)
+// Pin M3 (GPIO112) to ENET_MII_RX_DV (mode 14)
+// Pin N4 (GPIO113) to ENET_MII_RX_ERR (mode 14)
+// Pin N3 (GPIO114) to ENET_MII_RX_DATA0 (mode 14)
+// Pin V12 (GPIO115) to ENET_MII_RX_DATA1 (mode 14)
+// Pin W10 (GPIO116) to ENET_MII_RX_DATA2 (mode 14)
+// Pin U12 (GPIO117) to ENET_MII_RX_DATA3 (mode 14)
+// Pin T12 (GPIO118) to ENET_MII_TX_EN (mode 14)
+// Pin T15 (GPIO119) to ENET_MII_TX_ERR (mode 14)
+// Pin T8 (GPIO122) to ENET_MII_TX_DATA1 (mode 14)
+// Pin U8 (GPIO123) to ENET_MII_TX_DATA2 (mode 14)
+// Pin V8 (GPIO124) to ENET_MII_TX_DATA3 (mode 14)
+// Pin L4 (GPIO108) to ENET_MII_INTR (mode 14)
+// Pin J3 (GPIO105) to ENET_MDIO_CLK (mode 14)
+// Pin L2 (GPIO106) to ENET_MDIO_DATA (mode 14)
 // Pin L3 (GPIO107) to GPIO107 (mode 0)
 // Pin U15 (GPIO120) to GPIO120 (mode 0)
 // Pin W16 (GPIO121) to GPIO121 (mode 0)
-#define GPDMUX1_MASK		0x00c00000
-#define GPDMUX2_MASK		0x3c0f0000
-#define GPDMUX1_VALUE		0x00000000
-#define GPDMUX2_VALUE		0x28000000
-#define GPDGMUX1_VALUE		0x00000000
-#define GPDGMUX2_VALUE		0x3c000000
+#define GPDMUX1_MASK		0xfffc0000
+#define GPDMUX2_MASK		0x3fffffff
+#define GPDMUX1_VALUE		0xaa280000
+#define GPDMUX2_VALUE		0x2aa0aaaa
+#define GPDGMUX1_VALUE		0xff3c0000
+#define GPDGMUX2_VALUE		0x3ff0ffff
 
 //
 // Port E mux register values
@@ -188,7 +220,9 @@
 //
 // Port B analog mode register values
 //
-#define GPBAMSEL_MASK		0x00000000
+// Pin D19 (GPIO42) to UARTA_TX (mode 11)
+// Pin C19 (GPIO43) to UARTA_RX (mode 11)
+#define GPBAMSEL_MASK		0x00000c00
 #define GPBAMSEL_VALUE		0x00000000
 
 //*****************************************************************************

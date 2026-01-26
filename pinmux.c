@@ -2,7 +2,7 @@
 //
 // pinmux.c - Function to write the generated pin mux values to the appropriate
 //            registers.
-// Created using TI Pinmux 1.26.2+4477 on 1/21/2026 at 4:02:22 PM.
+// Created using TI Pinmux 1.26.2+4477 on 1/26/2026 at 10:25:55 PM.
 //
 //*****************************************************************************
 //
