@@ -1,6 +1,6 @@
 //*****************************************************************************
 //
-//  pinmux.h - Created using TI Pinmux 1.26.2+4477 on 1/27/2026 at 1:22:13 PM.
+//  pinmux.h - Created using TI Pinmux 1.26.2+4477 on 1/27/2026 at 2:18:57 PM.
 //
 //*****************************************************************************
 //
@@ -61,12 +61,36 @@
 //
 // Port A mux register values
 //
-#define GPAMUX1_MASK		0x00000000
-#define GPAMUX2_MASK		0x00000000
-#define GPAMUX1_VALUE		0x00000000
-#define GPAMUX2_VALUE		0x00000000
+// Pin C8 (GPIO0) to EPWM1A (mode 1)
+// Pin D8 (GPIO1) to EPWM1B (mode 1)
+// Pin A7 (GPIO2) to EPWM2A (mode 1)
+// Pin B7 (GPIO3) to EPWM2B (mode 1)
+// Pin C7 (GPIO4) to EPWM3A (mode 1)
+// Pin D7 (GPIO5) to EPWM3B (mode 1)
+// Pin A6 (GPIO6) to EPWM4A (mode 1)
+// Pin B6 (GPIO7) to EPWM4B (mode 1)
+// Pin G2 (GPIO8) to EPWM5A (mode 1)
+// Pin G3 (GPIO9) to EPWM5B (mode 1)
+// Pin B2 (GPIO10) to EPWM6A (mode 1)
+// Pin C1 (GPIO11) to EPWM6B (mode 1)
+// Pin C2 (GPIO12) to EPWM7A (mode 1)
+// Pin D1 (GPIO13) to EPWM7B (mode 1)
+// Pin D2 (GPIO14) to EPWM8A (mode 1)
+// Pin D3 (GPIO15) to EPWM8B (mode 1)
+// Pin E1 (GPIO16) to EPWM9A (mode 5)
+// Pin E2 (GPIO17) to EPWM9B (mode 5)
+// Pin E3 (GPIO18) to EPWM10A (mode 5)
+// Pin E4 (GPIO19) to EPWM10B (mode 5)
+// Pin F2 (GPIO20) to EPWM11A (mode 5)
+// Pin F3 (GPIO21) to EPWM11B (mode 5)
+// Pin J4 (GPIO22) to EPWM12A (mode 5)
+// Pin K4 (GPIO23) to EPWM12B (mode 5)
+#define GPAMUX1_MASK		0xffffffff
+#define GPAMUX2_MASK		0x0000ffff
+#define GPAMUX1_VALUE		0x55555555
+#define GPAMUX2_VALUE		0x00005555
 #define GPAGMUX1_VALUE		0x00000000
-#define GPAGMUX2_VALUE		0x00000000
+#define GPAGMUX2_VALUE		0x00005555
 
 //
 // Port B mux register values
