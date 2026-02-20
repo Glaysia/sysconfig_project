@@ -2,7 +2,7 @@
 //
 // f2838x_pinmux.c - Function to write the generated pin mux values to the
 //                    appropriate registers.
-// Created using TI Pinmux 1.26.2+4477 on 1/27/2026 at 1:22:13 PM.
+// Created using TI Pinmux 1.26.2+4477 on 2026. 2. 20. at 오후 8:42:45.
 //
 //*****************************************************************************
 //
@@ -147,6 +147,18 @@ GPIO_setPinMuxConfig(void)
     //
     GpioCtrlRegs.GPBAMSEL.all	&= ~GPBAMSEL_MASK;
     GpioCtrlRegs.GPBAMSEL.all	|= GPBAMSEL_VALUE;
+
+    //
+    // Write Input X-BAR pin selection to registers
+    //
+    InputXbarRegs.INPUT1SELECT	= INPUT1SELECT_VALUE;
+    InputXbarRegs.INPUT2SELECT	= INPUT2SELECT_VALUE;
+    InputXbarRegs.INPUT3SELECT	= INPUT3SELECT_VALUE;
+    InputXbarRegs.INPUT4SELECT	= INPUT4SELECT_VALUE;
+    InputXbarRegs.INPUT5SELECT	= INPUT5SELECT_VALUE;
+    InputXbarRegs.INPUT6SELECT	= INPUT6SELECT_VALUE;
+    InputXbarRegs.INPUT7SELECT	= INPUT7SELECT_VALUE;
+    InputXbarRegs.INPUT8SELECT	= INPUT8SELECT_VALUE;
 
     //
     // Restore GPIO lock register values

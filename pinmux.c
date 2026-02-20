@@ -2,7 +2,7 @@
 //
 // pinmux.c - Function to write the generated pin mux values to the appropriate
 //            registers.
-// Created using TI Pinmux 1.26.2+4477 on 1/27/2026 at 6:18:44 PM.
+// Created using TI Pinmux 1.26.2+4477 on 2026. 2. 20. at 오후 8:42:45.
 //
 //*****************************************************************************
 //
@@ -147,6 +147,18 @@ GPIO_setPinMuxConfig(void)
     //
     HWREG(GPIOCTRL_BASE + GPIO_O_GPBAMSEL)	&= ~GPBAMSEL_MASK;
     HWREG(GPIOCTRL_BASE + GPIO_O_GPBAMSEL)	|= GPBAMSEL_VALUE;
+
+    //
+    // Write Input X-BAR pin selection to registers
+    //
+    HWREGH(XBAR_INPUT_BASE + XBAR_O_INPUT1SELECT)	= INPUT1SELECT_VALUE;
+    HWREGH(XBAR_INPUT_BASE + XBAR_O_INPUT2SELECT)	= INPUT2SELECT_VALUE;
+    HWREGH(XBAR_INPUT_BASE + XBAR_O_INPUT3SELECT)	= INPUT3SELECT_VALUE;
+    HWREGH(XBAR_INPUT_BASE + XBAR_O_INPUT4SELECT)	= INPUT4SELECT_VALUE;
+    HWREGH(XBAR_INPUT_BASE + XBAR_O_INPUT5SELECT)	= INPUT5SELECT_VALUE;
+    HWREGH(XBAR_INPUT_BASE + XBAR_O_INPUT6SELECT)	= INPUT6SELECT_VALUE;
+    HWREGH(XBAR_INPUT_BASE + XBAR_O_INPUT7SELECT)	= INPUT7SELECT_VALUE;
+    HWREGH(XBAR_INPUT_BASE + XBAR_O_INPUT8SELECT)	= INPUT8SELECT_VALUE;
 
     //
     // Restore GPIO lock register values

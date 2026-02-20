@@ -5,6 +5,8 @@
  * @v2CliArgs --device "TMS320F28388D" --package "337bga"
  * @versions {"tool":"1.26.2+4477"}
  */
+scripting.excludeFromBuild("f2838x_pinmux.c");
+scripting.excludeFromBuild("f2838x_pinmux.h");
 
 /**
  * These are the peripherals and settings in this configuration
@@ -233,13 +235,21 @@ GPIO4["0"].$assign                     = "GPIO35";
 GPIO4["1"].$assign                     = "GPIO37";
 GPIO4["2"].$assign                     = "GPIO38";
 GPIO4["3"].$assign                     = "GPIO60";
+GPIO4["3"].$used                       = false;
 GPIO4["4"].$assign                     = "GPIO61";
+GPIO4["4"].$used                       = false;
 GPIO4["5"].$assign                     = "GPIO62";
+GPIO4["5"].$used                       = false;
 GPIO4["6"].$assign                     = "GPIO63";
+GPIO4["6"].$used                       = false;
 GPIO4["7"].$assign                     = "GPIO64";
+GPIO4["7"].$used                       = false;
 GPIO4["8"].$assign                     = "GPIO65";
+GPIO4["8"].$used                       = false;
 GPIO4["9"].$assign                     = "GPIO66";
+GPIO4["9"].$used                       = false;
 GPIO4["10"].$assign                    = "GPIO67";
+GPIO4["10"].$used                      = false;
 GPIO4["11"].$assign                    = "GPIO68";
 GPIO4["12"].$assign                    = "GPIO69";
 GPIO4["13"].$assign                    = "GPIO70";
@@ -289,12 +299,44 @@ GPIO7["1"].$assign                     = "GPIO96";
 GPIO7["2"].$assign                     = "GPIO97";
 GPIO7["3"].$assign                     = "GPIO98";
 GPIO7["4"].$assign                     = "GPIO99";
-GPIO7["5"].$assign                     = "GPIO32";
+GPIO7["5"].$assignAllowConflicts       = "GPIO32";
+GPIO7["5"].$used                       = false;
 GPIO7["6"].$assign                     = "GPIO33";
+GPIO7["6"].$used                       = false;
 GPIO7["7"].$assign                     = "GPIO39";
 GPIO7["8"].$assign                     = "GPIO40";
 GPIO7["9"].$assign                     = "GPIO55";
 GPIO7.$name                            = "conector";
+const I2C1                             = scripting.addPeripheral("I2C");
+I2C1.$name                             = "MyI2C1";
+I2C1["I2C@_SDA"].$assign               = "GPIO32";
+I2C1["I2C@_SCL"].$assign               = "GPIO33";
+const INPUTXBAR1                       = scripting.addPeripheral("INPUTXBAR");
+INPUTXBAR1.$name                       = "MyINPUTXBAR1";
+INPUTXBAR1.INPUTXBAR1.$assign          = "GPIO60";
+INPUTXBAR1.INPUTXBAR1.$used            = true;
+INPUTXBAR1.INPUTXBAR2.$assign          = "GPIO61";
+INPUTXBAR1.INPUTXBAR2.$used            = true;
+INPUTXBAR1.INPUTXBAR3.$assign          = "GPIO62";
+INPUTXBAR1.INPUTXBAR3.$used            = true;
+INPUTXBAR1.INPUTXBAR4.$assign          = "GPIO63";
+INPUTXBAR1.INPUTXBAR4.$used            = true;
+INPUTXBAR1.INPUTXBAR5.$assign          = "GPIO64";
+INPUTXBAR1.INPUTXBAR5.$used            = true;
+INPUTXBAR1.INPUTXBAR6.$assign          = "GPIO65";
+INPUTXBAR1.INPUTXBAR6.$used            = true;
+INPUTXBAR1.INPUTXBAR7.$assign          = "GPIO66";
+INPUTXBAR1.INPUTXBAR7.$used            = true;
+INPUTXBAR1.INPUTXBAR8.$assign          = "GPIO67";
+INPUTXBAR1.INPUTXBAR8.$used            = true;
+INPUTXBAR1.INPUTXBAR9.$used            = false;
+INPUTXBAR1.INPUTXBAR10.$used           = false;
+INPUTXBAR1.INPUTXBAR11.$used           = false;
+INPUTXBAR1.INPUTXBAR12.$used           = false;
+INPUTXBAR1.INPUTXBAR13.$used           = false;
+INPUTXBAR1.INPUTXBAR14.$used           = false;
+INPUTXBAR1.INPUTXBAR15.$used           = false;
+INPUTXBAR1.INPUTXBAR16.$used           = false;
 const MCAN1                            = scripting.addPeripheral("MCAN");
 MCAN1.$name                            = "MyMCAN1";
 MCAN1.MCAN_RX.$assign                  = "GPIO36";
@@ -317,9 +359,11 @@ UART1["UART@_RX"].$assign              = "GPIO85";
  * version of the tool will not impact the pinmux you originally saw.  These lines can be completely deleted in order to
  * re-solve from scratch.
  */
-ECAT1.$suggestSolution     = "ECAT";
-ETHERNET1.$suggestSolution = "ETHERNET";
-MCAN1.$suggestSolution     = "MCAN";
-SCI1.$suggestSolution      = "SCIA";
-SCI2.$suggestSolution      = "SCIB";
-UART1.$suggestSolution     = "UARTA";
+ECAT1.$suggestSolution      = "ECAT";
+ETHERNET1.$suggestSolution  = "ETHERNET";
+I2C1.$suggestSolution       = "I2CA";
+INPUTXBAR1.$suggestSolution = "INPUTXBAR";
+MCAN1.$suggestSolution      = "MCAN";
+SCI1.$suggestSolution       = "SCIA";
+SCI2.$suggestSolution       = "SCIB";
+UART1.$suggestSolution      = "UARTA";
